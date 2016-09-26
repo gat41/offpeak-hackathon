@@ -1,0 +1,54 @@
+<h4>Welcome Julia! What do you feel like eating today?</h4>
+
+<div id="restaurant" class = "container-fluid">
+  <div class="row">
+    <div id="rest1" class="col-md-3"><%= image_tag("BuddiesBistro.jpg", :alt => "rss feed", style: 'display: block; margin: auto; width: 100%; border: 1px solid padding: 5px') %> 
+    <p></p>
+    <p class="desc">Mr Coffee Cafe</br>
+    468 Booked </p>
+
+    <div class="col-md-offset-3">
+        <button id="book-btn" type="button" class="btn btn-primary" onclick="myFunction()">BOOK NOW</button>
+    </div>
+    <div class="demo"></div>
+    
+    </p>
+    </div>
+    
+    <div id="rest2" class="col-md-3"><%= image_tag("dessert.jpg", :alt => "rss feed", :class => "style_image", style: 'display: block; margin: auto; width: 100%; border: 1px solid padding: 5px') %> 
+    <p></p>
+    <p class="desc">California Fish and Finger</br> 
+    632 Booked</p>
+        <div class="col-md-offset-3">
+        <button id="book-btn" type="button" class="btn btn-primary" onclick="myFunction()">BOOK NOW</button>
+    </div>
+    <div class="demo"></div>
+
+
+    </div>
+    
+    <div id="rest 3" class="col-md-3"><%= image_tag("dessert2.JPG", :alt => "rss feed", :class => "style_image", style: 'display: block; margin: auto; width: 100%; border: 1px solid padding: 5px') %> 
+    <p></p>
+    <p class="desc"> Super Recipe Secrets</br>
+     87 Booked</p>
+
+    <div class="col-md-offset-3">
+        <button id="book-btn" type="button" class="btn btn-primary" onclick="myFunction()">BOOK NOW</button>
+    </div>
+    <div class="demo"></div>
+
+    </div>
+
+
+	</div>
+</div>
+
+    <script>
+    function myFunction() {
+        // document.getElementById("demo").innerHTML = "Hello World";
+        document.getElementById("demo");
+        alert('Thanks for booking with Offpeak. Get 5 chomps afer you have dined at this restaurant.');   
+    }
+    </script>
+
+

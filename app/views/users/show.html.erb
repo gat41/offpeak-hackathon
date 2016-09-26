@@ -1,0 +1,66 @@
+<h3>My Account</h3>
+
+<div id="profile-page" class = "container-fluid">
+  <div class="row">
+    <div id="user-info" class="col-md-4">
+    <%= image_tag("lady.jpg", :alt => "rss feed", style: 'display: block; margin: auto; height: 100%; width: 70%; border-radius: 50%; border-width: 5px solid; border-color: red') %>   
+    <p></p>
+    <h4>Julia Chin Andrew </h4>
+    <h5>Kuala Lumpur, Malaysia</h5>
+
+    <p><em>Email</em></br>
+    <%= current_user.email %>
+
+    <p><em>Date of Birth</em></br>
+    27 September 2016
+
+    <p><em>Relationship Status</em></br>
+    In a relationship
+
+</div>
+ 
+ <div id="user-preferences" class="col-md-6">
+
+<p><strong>Newsletter Preferences</strong></br>
+
+<form role="form">
+  <div class="radio">
+  <label><input type="radio" name="optradio" checked="checked">On</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label><input type="radio" name="optradio">Off</label>
+</div>
+
+<p><em><strong>What types of cuisines are you interested in?</strong></em></p>
+
+<form role="form">
+  <div class="checkbox" class = "container-fluid">
+  <div class="row">
+    <div id="checkbox-col-1" class="col-md-4">
+    <label><input type="checkbox" value="American">American</label></br>
+    <label><input type="checkbox" value="Cafe/Bistro" checked="checked"> Cafe/Bistro</label></br>
+    <label><input type="checkbox" name="cuisine" value="Chinese"> Chinese</label></br>
+    <label><input type="checkbox" name="cuisine" value="Dessert" checked="checked"> Dessert</label></br>
+    <label><input type="checkbox" name="cuisine" value="Fusion"> Fusion </label></br>
+    <label><input type="checkbox" name="cuisine" value="Italian"> Italian </label></br>
+  </div>
+
+  <div id="checkbox-col-1" class="col-md-4">
+
+    <label><input type="checkbox" name="cuision" value="Japanese"> Japanese </label></br>
+    <label><input type="checkbox" name="cuision" value="Juice Bar"> Juice Bar</label></br>
+    <label><input type="checkbox" name="cuision" value="Korean"> Korean</label></br>
+    <label><input type="checkbox" name="cuision" value="Thai"> Thai</label></br>
+    <label><input type="checkbox" name="cuision" value="Western" checked="checked"> Western</label></br>
+  <p></p>
+  <button type="button" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+
+  </div>
+
+</div>   
+
+
+
+

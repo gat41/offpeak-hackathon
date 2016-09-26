@@ -1,0 +1,76 @@
+<%= form_for @listing do |f| %>
+ 
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@listing.errors.count, "error") %> prohibited
+        this listing from being saved:
+      </h2>
+      <ul>
+        <% @alisting.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    Listing name:
+    <%= f.text_field :listing_name %>
+  </p>
+ 
+  <p>
+    A short description of your place:
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    Address:
+    <%= f.text_area :address %>
+  </p>
+ 
+  <p>
+    Property type:  
+    <%= select( "listing", "property_type", Listing::PROPERTIES ) %>
+  </p>
+
+  <p>
+    Room type:
+    <%= select( "listing", "room_type", Listing::ROOMS ) %>
+  </p>
+
+  <p>
+    Number of guests:
+    <%= f.number_field :num_guests %>    
+  </p>
+
+  <p>
+    Number of bedrooms: <%= f.number_field :num_bedroom %>    
+  </p>
+
+   <p>
+    Number of beds:
+     <%= f.number_field :num_beds %>    
+  </p>
+
+  <p>
+    Number of bathrooms:
+     <%= f.number_field :num_bathroom %>    
+  </p>
+
+  <p>
+    Price per night (RM):
+     <%= f.number_field :price_per_night %>    
+  </p>
+ 
+  <%= f.collection_check_boxes(:amenity_ids, Amenity.all, :id, :name) do |b| %>
+      <%= b.label class:"label-checkbox" do%>
+      <%=b.check_box + b.text%></br>
+    <%end%>
+<% end %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

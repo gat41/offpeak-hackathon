@@ -1,0 +1,27 @@
+<p>
+	<strong>Listing:</strong>
+	<%= @listing.listing_name %>
+</p>
+
+<p>
+	<p>Short description of your listing: <%= @listing.description %>
+	<p>Address: <%= @listing.address %>
+	<p>Property type: <%= @listing.property_type %>
+  <p>Room type: <%= @listing.room_type %>
+  <p>Number of guests: <%=  @listing.num_guests %>
+  <p>Number of bedrooms: <%=  @listing.num_bedroom %>
+  <p>Number of beds: <%=  @listing.num_beds %>
+  <p>Number of bathrooms: <%=  @listing.num_bathroom %>
+  <p>Price/night (RM): <%=  @listing.price_per_night %>
+
+  <p>Amenities:</br>
+  <% @listing.amenities.each do |a|  %>
+  <%= a.name %></br>
+  <% end %>
+
+</p>
+
+<% if current_user.id == @listing.user_id %> 
+<%= link_to 'Edit', edit_listing_path(@listing) %>
+<%= link_to 'Back', listings_path %>
+<% end %>

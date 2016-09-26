@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloning PairBnB</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <% if signed_in? %>
+    Signed in as: <%= current_user.email %>
+    <%= link_to 'My Blog', controller: 'articles' %>
+    <%= link_to 'New article', new_article_path %>
+    <%= button_to 'Sign out', sign_out_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Sign in', sign_in_path %>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <div id="status"></div>
+  <% end %>
+
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
+  </div>
+
+  <div id="flash">
+     <% flash.each do |key, value| %>
+     <div class="flash <%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>
+

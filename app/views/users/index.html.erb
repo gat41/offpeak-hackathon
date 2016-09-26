@@ -1,0 +1,87 @@
+<h3>My Account</h3>
+
+<div id="photo-container">
+  <div class="row">
+    <div id="user-info" class="col-md-4">
+    <%= image_tag("lady.jpg", :alt => "rss feed", style: 'display: block; margin: auto; height: 100%; width: 70%; border: 1px solid #ccc; padding: 5px;') %>   
+    <p></p>
+    <h5 style='text-align: center;'>Julia Chin Andrew </h5>
+    <h6 style='text-align: center;'>Kuala Lumpur, Malaysia</h6>
+</div>
+
+<div id="summary-box" class="col-md-6">
+<ul class="detail-box">
+  <li><strong>4</strong><br>restaurants</li>
+  <li><strong>5</strong><br> bookings</li>
+  <li><strong>2</strong><br> hotlists</li>
+</ul>
+
+<p id="gap-box">...</p>
+
+<ul class="detail-box">
+  <li><p class="one"><strong>2 </strong><br> referrals</p>
+    <span id="hovering"><%= image_tag("sns.png", :alt=> "rss.feed") %></span></li>
+  <li><strong>10</strong><br> chomps</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<div id="profile-page" class = "container-fluid">
+  <div class="row">
+    <div id="user-info" class="col-md-4">
+    <p><em>Email</em></br>
+    julzca@gmail.com
+
+    <p><em>Date of Birth</em></br>
+    27 September 1990
+
+    <p><em>Relationship Status</em></br>
+    In a relationship
+
+    <p>
+    <button type="button" class="btn btn-primary">Edit Profile</button>
+</div>
+ 
+<div id="user-preferences" class="col-md-6">
+<p><strong>Newsletter Preferences</strong></br>
+
+<form role="form">
+  <div class="radio">
+  <label><input type="radio" name="optradio" checked="checked">On</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label><input type="radio" name="optradio">Off</label>
+</div>
+<form role="form">
+  <div class="checkbox" class = "container-fluid">
+  <div class="row">
+  <p><em><strong>What types of cuisines are you interested in?</strong></em></br>
+    <div id="checkbox-col-1" class="col-md-4">
+    <label><input type="checkbox" value="American">American</label></br>
+    <label><input type="checkbox" value="Cafe/Bistro" checked="checked"> Cafe/Bistro</label></br>
+    <label><input type="checkbox" name="cuisine" value="Chinese"> Chinese</label></br>
+    <label><input type="checkbox" name="cuisine" value="Dessert" checked="checked"> Dessert</label></br>
+    <label><input type="checkbox" name="cuisine" value="Fusion"> Fusion </label></br>
+    <label><input type="checkbox" name="cuisine" value="Italian"> Italian </label></br>
+  </div>
+
+  <div id="checkbox-col-1" class="col-md-4">
+
+    <label><input type="checkbox" name="cuision" value="Japanese"> Japanese </label></br>
+    <label><input type="checkbox" name="cuision" value="Juice Bar"> Juice Bar</label></br>
+    <label><input type="checkbox" name="cuision" value="Korean"> Korean</label></br>
+    <label><input type="checkbox" name="cuision" value="Thai"> Thai</label></br>
+    <label><input type="checkbox" name="cuision" value="Western" checked="checked"> Western</label></br>
+  <p></p>
+  <button type="button" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+
+  </div>
+
+</div>   
+
+

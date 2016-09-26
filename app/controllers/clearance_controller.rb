@@ -1,0 +1,2 @@
+class ClearanceController < ApplicationController
+end

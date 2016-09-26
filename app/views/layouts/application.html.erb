@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>www.Offpeak.my | Food, Beverage and Dining Discounts every hour, every day at Restaurants in Malaysia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<!--     <script
+        src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    <script
+       src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+       integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+       crossorigin="anonymous"></script> -->
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div id="nav-bar" class = "container-fluid">
+    <div class="row">
+      <%= render 'shared/navigation' %>
+    </div>    
+  </div>
+
+  <div id="search-bar-container" class="container-fluid">
+    <div class = "row">
+    <div class="col-md-3"></div>
+    <div class="col-md-7">
+      <%= form_tag(listings_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for restaurants, cuisines" %>
+      <%= select("listing", "address",  [ 'Petaling Jaya', 'Klang', 'Kuala Lumpur', 'Subang Jaya', 'Kepong' ], :prompt => 'Any Location') %>
+       <%= select("listing", "address",  [ 'Today', 'Tomorrow', 'Mon, 26 Sep', 'Tues, 27 Sep', 'Wed, 28 Sep' ], :prompt => 'Date') %>
+        <%= select("listing", "address",  [ '08:00', '08:30', '09:00', '09:30', '10:00' ], :prompt => 'Time') %>
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+    <% end %>
+    <div class="col-md-2"></div>
+    </div>
+  </div>
+
+
+  <% if signed_in? == false %>
+    <div id="landing-page-image" class="container-fluid">
+      <div class="row">
+        <%= image_tag("Landing Page.jpg", :alt => "rss feed", style:'width: 100%;') %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if signed_in? %>
+    
+<% unless flash.blank? %>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div id='flash'>
+      <% flash.each do |key, value| %>
+        <div class='flash alert alert-dismissible fade in alert-<%= key = 'info' %>'>
+          <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+          </button>
+          <%= value %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+      <div id="main-container" class="container-fluid">
+          <div class="row">
+            <div id="sidebar" class="col-xs-2">
+              <h4 class="refine">REFINE YOUR SEARCH</h4>
+      
+ <button class="accordion">HALAL</button>
+<div class="panel">
+  <p>Halal</p>
+  <p>Non-Halal</p>
+  <p>Pork Free</p> 
+</div>
+
+<button class="accordion">PRICE</button>
+<div class="panel">
+  <p>Low</p>
+  <p>Moderate</p>
+  <p>High</p>
+</div>
+
+<button class="accordion">CUISINE</button>
+<div class="panel">
+  <p>Western</p>
+  <p>Dessert</p>
+  <p>Chinese</p>
+</div>
+
+<button class="accordion">LOCATION</button>
+<div class="panel">
+  <p>Kuala Lumpur</p>
+  <p>Petaling Jaya</p>
+  <p>Penang</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+</script>
+</div>
+
+<div id="gap" class="col-xs-1"></div>
+
+            <div id="main-content" class="col-xs-9">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+  <% end %> 
+      
+
+</body>
+</html>
